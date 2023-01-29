@@ -1,0 +1,113 @@
+<html>
+  <head><style>
+    #button{
+    
+      width: 100px;
+      height: 50px;
+      border: 2px solid green;
+      text-align: center;
+      background-color: green;
+      font-size:large;
+      font-weight: bold;
+      font-family: verdana;
+      font-style: italic;
+      color:black;
+      border-radius:10px 10px;
+      box-shadow: 2px 2px 5px 4px black;
+      
+    }
+    h1{
+      text-align: center;
+      text-decoration:underline green solid;
+      color:darkblue;
+      text-shadow: 2px 2px 10px red,4px 4px 10px orangered;
+    }
+  #add{
+  width:30%;
+  height:30px;
+  }
+  #num{
+  color:green;
+  font-size:14px;
+  font-weight:bold;
+  text-align:right;
+  }
+  .see{
+    border-radius:10px 10px;
+    width:50%;
+    box-shadow: 2px 2px 5px 4px black;
+  }
+  #ddv{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color:blue;
+    line-height: 1.5em;
+  }
+  h3{
+    text-align: center;
+      text-decoration:underline rgb(9, 193, 206) solid;
+      color:rgb(146, 31, 223);
+    }
+  .see option{
+    color:rgb(26, 10, 24);
+  font-size:14px;
+  font-weight:bold;
+  text-align:center;
+  }
+ 
+  </style>
+  </head>
+  <body bgcolor="tan">
+    <h1>Registration Form</h1>
+    <h3>    Please fill in the below details carefully </h3>
+    <form>
+      <div id="ddv">
+        <label for="firstname"> First Name : <input type="text" onkeyup="alp(this)" maxlength="20" class="see" placeholder="First Name"><br><br>
+          <label for="lastname"> Last Name : <input type="text" onkeyup="alp(this)" maxlength="20" class="see" placeholder="Last Name"><br><br>
+            <label for="gender"> Gender : <input type="radio" name="gender" value="male" checked>Male &nbsp
+              <input  type="radio" name="gender" value="male">Female<br><br>
+              <label for="age"> Date of Birth : <input type="date" onkeyup="numb(this)" class="see" maxlength="3" placeholder="in years"><br><br>
+                <label for="adress">Address : <textarea name="add" id="add" class="see">
+       </textarea><br><span id="num">charecters remaining:100</span><br><br>
+                  <label for="district"> District : <select class="see">
+                      <option selected disabled>Select</option>
+                      <option>Srinagar</option>
+                      <option>Budgam</option>
+                      <option>Baramulla</option>
+                      <option>Shopain</option>
+                      <option>Pulwama</option>
+                      <option>Jammu</option>
+                    </select><br><br>
+                    <button id="button" type="submit" value="submit" name="submit"><span style="color: peru;">Submit</span></button>
+      </div>
+    </form>
+  </body>
+</html>
+<script>
+function numb(input){
+	var num= /[^0-9]/gi;
+	input.value=input.value.replace(num,"");
+	
+}
+function alp(input){
+	var num= /[^a-z]/gi;
+	input.value=input.value.replace(num,"")	
+}
+const mytext= document.getElementById('add');
+const myadd= document.getElementById('num');
+const maxcar=100;
+ mytext.addEventListener('input',function addr(){
+const rem=maxcar-mytext.value.length; 
+const len=mytext.value.length;
+if(len == maxcar){
+mytext.value=mytext.value.substring(0,99);
+myadd.innerText=100;
+}                                                                                                                                      
+const colur= rem < maxcar * 0.1 ? 'red' : null;
+myadd.textContent=`${rem}charecters remaining`;
+myadd.style.color=colur;})
+
+
+ 
+</script>
