@@ -67,7 +67,7 @@
           <label for="lastname"> Last Name : <input type="text" onkeyup="alp(this)" maxlength="20" class="see" placeholder="Last Name"><br><br>
             <label for="gender"> Gender : <input type="radio" name="gender" value="male" checked>Male &nbsp
               <input  type="radio" name="gender" value="male">Female<br><br>
-              <label for="age"> Date of Birth : <input type="date" onkeyup="numb(this)" class="see" maxlength="3" placeholder="in years"><br><br>
+              <label for="age"> Date of Birth : <input type="date" class="see" maxlength="3" placeholder="in years"><br><br>
                 <label for="adress">Address : <textarea name="add" id="add" class="see">
        </textarea><br><span id="num">charecters remaining:100</span><br><br>
                   <label for="district"> District : <select class="see">
